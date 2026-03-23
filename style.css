@@ -144,6 +144,117 @@ h1 {
 
 /* Responsiveness */
 
+.timer-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+#settings-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #d7e0ff;
+  padding: 4px 6px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+#settings-btn:hover {
+  transform: rotate(60deg);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-box {
+  background: #2e325a;
+  border-radius: 14px;
+  padding: 2rem 2.2rem;
+  width: 330px;
+  color: #d7e0ff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modal-box h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.setting-row label {
+  font-size: 0.9rem;
+}
+
+.setting-row input[type="number"] {
+  width: 68px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  background: #1e213f;
+  color: #d7e0ff;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.setting-row input[type="number"]:focus {
+  outline: 2px solid royalblue;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.8rem;
+}
+
+.modal-buttons button {
+  padding: 8px 26px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+#apply-settings {
+  background-color: royalblue;
+  color: #fff;
+}
+
+#apply-settings:hover {
+  background-color: #2a52c9;
+}
+
+#close-settings {
+  background-color: #444a7a;
+  color: #d7e0ff;
+}
+
+#close-settings:hover {
+  background-color: #555c99;
+}
+
 @media screen and (min-width: 320px) and (max-width: 600px) {
   .container {
     transform: scale(0.9);

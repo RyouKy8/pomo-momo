@@ -79,9 +79,7 @@ function startTimer(timerDisplay) {
     if (timeRemaining <= 0) {
       clearInterval(myInterval);
       timerDisplay.textContent = "00:00";
-      const alarm = new Audio(
-        "https://www.freespecialeffects.co.uk/soundfx/scifi/electronic.wav",
-      );
+      const alarm = new Audio("https://www.youtube.com/watch?v=wAsbbidUk8o");
       alarm.play();
     } else {
       const minutes = Math.floor(timeRemaining / 60000);
@@ -105,4 +103,56 @@ stopBtn.addEventListener("click", () => {
   if (currentTimer) {
     clearInterval(myInterval);
   }
+});
+
+// Settings modal
+const settingsBtn = document.getElementById("settings-btn");
+const settingsModal = document.getElementById("settings-modal");
+const applyBtn = document.getElementById("apply-settings");
+const closeBtn = document.getElementById("close-settings");
+const pomodoroInput = document.getElementById("pomodoro-input");
+const shortInput = document.getElementById("short-input");
+const longInput = document.getElementById("long-input");
+
+settingsBtn.addEventListener("click", () => {
+  settingsModal.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+  settingsModal.style.display = "none";
+});
+
+settingsModal.addEventListener("click", (e) => {
+  if (e.target === settingsModal) {
+    settingsModal.style.display = "none";
+  }
+});
+
+applyBtn.addEventListener("click", () => {
+  const pomMins = Math.min(
+    99,
+    Math.max(1, parseInt(pomodoroInput.value) || 25),
+  );
+  const shortMins = Math.min(99, Math.max(1, parseInt(shortInput.value) || 5));
+  const longMins = Math.min(99, Math.max(1, parseInt(longInput.value) || 10));
+
+  pomodoroInput.value = pomMins;
+  shortInput.value = shortMins;
+  longInput.value = longMins;
+
+  pomodoro.setAttribute("data-duration", pomMins);
+  pomodoro.innerHTML = `<h1 class="time">${pomMins}:00</h1>`;
+
+  short.setAttribute("data-duration", shortMins);
+  short.innerHTML = `<h1 class="time">${shortMins}:00</h1>`;
+
+  long.setAttribute("data-duration", longMins);
+  long.innerHTML = `<h1 class="time">${longMins}:00</h1>`;
+
+  if (myInterval) {
+    clearInterval(myInterval);
+    myInterval = null;
+  }
+
+  settingsModal.style.display = "none";
 });

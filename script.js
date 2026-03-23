@@ -79,7 +79,9 @@ function startTimer(timerDisplay) {
     if (timeRemaining <= 0) {
       clearInterval(myInterval);
       timerDisplay.textContent = "00:00";
-      const alarm = new Audio("https://www.youtube.com/watch?v=wAsbbidUk8o");
+      const alarm = new Audio(
+        "https://www.freespecialeffects.co.uk/soundfx/scifi/electronic.wav",
+      );
       alarm.play();
     } else {
       const minutes = Math.floor(timeRemaining / 60000);

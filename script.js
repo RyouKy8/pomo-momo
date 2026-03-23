@@ -80,7 +80,7 @@ function startTimer(timerDisplay) {
       clearInterval(myInterval);
       timerDisplay.textContent = "00:00";
       const alarm = new Audio(
-        "https://www.freespecialeffects.co.uk/soundfx/scifi/electronic.wav",
+        "https://audio-previews.elements.envatousercontent.com/files/181619625/preview.mp3",
       );
       alarm.play();
     } else {

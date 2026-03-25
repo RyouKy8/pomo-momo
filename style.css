@@ -1,151 +1,252 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-    background-color: #1e213f;
-    color: #d7e0ff;
+  background-color: #1e213f;
+  color: #d7e0ff;
 }
 
 .container {
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .timer {
-    display: inline-block;
-    padding: 10px;
-    width: 600px;
-    box-sizing: border-box;
+  display: inline-block;
+  padding: 10px;
+  width: 600px;
+  box-sizing: border-box;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.tab-button {
+  background-color: #2e325a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background-color: #020323;
+}
+
+.hidden-view {
+  display: none;
+}
+
+.control-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.control-button,
+.alarm-select {
+  background-color: #2e325a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+}
+
+.control-button {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.control-button:hover {
+  background-color: #020323;
+}
+
+.alarm-label {
+  font-size: 0.9rem;
 }
 
 main {
-    width: 25rem;
-    height: 25rem;
-    border-radius: 50%;
-    text-align: center;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 h1 {
-    font-size: 2rem;
-    margin: 20px auto;
+  font-size: 2rem;
+  margin: 20px auto;
 }
 
 .button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .pomodoro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    margin: 2.5rem 0;
-    text-align: center;
-    border-radius: 50%;
-    background: #151932;
-    box-shadow: 20px 20px 42px #0e1021, -20px -20px 42px #1c2244;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 2.5rem 0;
+  text-align: center;
+  border-radius: 50%;
+  background: #151932;
+  box-shadow:
+    20px 20px 42px #0e1021,
+    -20px -20px 42px #1c2244;
 }
 
 .pomodoro::before {
-    content: "";
-    position: absolute;
-    border: 10px solid royalblue;
-    border-radius: 50%;
-    width: 22rem;
-    height: 22rem;
+  content: "";
+  position: absolute;
+  border: 10px solid royalblue;
+  border-radius: 50%;
+  width: 22rem;
+  height: 22rem;
 }
 
 .time {
-    font-size: 5rem !important;
-    margin: 20px auto;
+  font-size: 5rem !important;
+  margin: 20px auto;
 }
 
 .button-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
-    background-color: #2e325a;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    transition: all .2s ease-in;
+  background-color: #2e325a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
-.button.active, .button:hover {
-    background-color: #020323;
+.button.active,
+.button:hover {
+  background-color: #020323;
 }
 
 .hidden {
-    display: block;
+  display: block;
 }
 
 .timer-display {
-    font-size: 5rem;
-    margin-top: 20px;
-    font-weight: bold;
+  font-size: 5rem;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
 .buttons {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-#start, #stop {
-    background-color: #2e325a;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    transition: all .2s ease-in;
+#start,
+#stop {
+  background-color: #2e325a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
 #stop:hover {
-    background-color: tomato;
+  background-color: tomato;
 }
 
 #start:hover {
-    background-color: #219a52;
+  background-color: #219a52;
 }
 
 #timer-message {
-    color: white;
-    background-color: tomato;
-    display: none;
-    padding: .5rem;
-    font-size: 1rem;
-    text-align: center;
-    border-radius: 1rem;
+  color: white;
+  background-color: tomato;
+  display: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.timer-hidden {
+  visibility: hidden;
+}
+
+.stats-card {
+  background: #151932;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.stats-card h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.2rem;
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stats-table th,
+.stats-table td {
+  border-bottom: 1px solid #2e325a;
+  padding: 0.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+#youtube-players {
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 /* Responsiveness */
 
 @media screen and (min-width: 320px) and (max-width: 600px) {
-    .container {
-        transform: scale(0.9)
-    }
+  .container {
+    transform: scale(0.9);
+  }
 
-    .timer {
-        width: 500px;
-    }
+  .timer {
+    width: 500px;
+  }
+
+  .control-panel {
+    gap: 0.3rem;
+  }
 }
